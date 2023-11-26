@@ -5,12 +5,22 @@ import "./App.css";
 import { BaseColaboradores } from "./data/data";
 
 function App() {
-  const [error, setError] = useState({});
+  const [error, setError] = useState({
+    load: false,
+    mistake: true,
+    conditions: {
+      boolNombre: false,
+      boolEmail: false,
+      boolEdad: false,
+      boolCargo: false,
+      boolTel: false,
+    },
+  });
 
   return (
     <>
       <Listado colaboradores={BaseColaboradores} />
-      <Formulario {...{ error, setError }} />
+      <Formulario {...{ error, setError, colaboradores: BaseColaboradores }} />
     </>
   );
 }

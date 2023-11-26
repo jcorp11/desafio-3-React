@@ -1,7 +1,7 @@
 import Table from "react-bootstrap/Table";
 
 const Listado = ({ colaboradores }) => {
-  console.log(Object.keys(colaboradores["0"]));
+  // console.log(Object.keys(colaboradores["0"]));
   const protohead = Object.keys(colaboradores["0"]);
   protohead.shift();
   const header = protohead.map((v) => {
