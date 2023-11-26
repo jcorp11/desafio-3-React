@@ -1,7 +1,11 @@
 #root {
   padding: 2rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  /* text-align: center; */
+  /* display: flex;
+  justify-content: center; */
+  /* gap: 20px; */
+}
+
+.second-block {
+  padding: 0;
 }

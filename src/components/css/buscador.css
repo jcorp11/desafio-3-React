@@ -1,0 +1,9 @@
+.buscador-container {
+  width: fit-content;
+  & input {
+    width: 75%;
+  }
+}
+h1 {
+  font-size: 2.5rem;
+}

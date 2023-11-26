@@ -1,12 +1,6 @@
 import Table from "react-bootstrap/Table";
 
-const Listado = ({ colaboradores }) => {
-  // console.log(Object.keys(colaboradores["0"]));
-  const protohead = Object.keys(colaboradores["0"]);
-  protohead.shift();
-  const header = protohead.map((v) => {
-    return v.charAt(0).toUpperCase() + v.slice(1);
-  });
+const Listado = ({ header, colaboradores }) => {
   return (
     <div className="listado">
       <Table striped bordered hover>

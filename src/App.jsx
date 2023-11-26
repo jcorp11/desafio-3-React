@@ -3,8 +3,11 @@ import Listado from "./components/Listado";
 import Formulario from "./components/Formulario";
 import "./App.css";
 import { BaseColaboradores } from "./data/data";
+import Buscador from "./components/Buscador";
 
 function App() {
+  const header = ["Nombre", "Correo", "Edad", "Cargo", "Telefono"];
+
   const [error, setError] = useState({
     load: false,
     mistake: true,
@@ -17,10 +20,19 @@ function App() {
     },
   });
 
+  const [colaboradoresShow, setColaboradoresShow] = useState([
+    ...BaseColaboradores,
+  ]);
+
   return (
     <>
-      <Listado colaboradores={BaseColaboradores} />
-      <Formulario {...{ error, setError, colaboradores: BaseColaboradores }} />
+      <Buscador {...{ BaseColaboradores, setColaboradoresShow }} />
+      <section className="container-fluid d-flex justify-content-start gap-3 mt-3 second-block">
+        <Listado header={header} colaboradores={colaboradoresShow} />
+        <Formulario
+          {...{ error, setError, colaboradores: BaseColaboradores }}
+        />
+      </section>
     </>
   );
 }
