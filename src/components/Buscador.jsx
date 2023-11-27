@@ -4,7 +4,6 @@ import "./css/buscador.css";
 const Buscador = ({ BaseColaboradores, setColaboradoresShow }) => {
   const [colabBuscado, setColabBuscado] = useState("");
 
-  // console.log({ BaseColaboradores });
   const filtarTabla = (colabBuscado) => {
     console.log(BaseColaboradores);
     const filtrado = BaseColaboradores.filter((colaborador) => {
@@ -15,7 +14,6 @@ const Buscador = ({ BaseColaboradores, setColaboradoresShow }) => {
         colaborador.correo.toLowerCase().includes(colabBuscado.toLowerCase())
       );
     });
-    console.log({ filtrado });
     setColaboradoresShow(filtrado);
   };
 
@@ -27,7 +25,6 @@ const Buscador = ({ BaseColaboradores, setColaboradoresShow }) => {
         className="form-control mt-3"
         placeholder="Busca un colaborador"
         onChange={(e) => {
-          // setColabBuscado(e.target.value);
           filtarTabla(e.target.value);
         }}
       />
