@@ -26,17 +26,19 @@ function App() {
 
   return (
     <>
-      <Buscador {...{ BaseColaboradores, setColaboradoresShow }} />
-      <section className="container-fluid d-flex gap-3 mt-3 second-block">
-        <Listado header={header} colaboradores={colaboradoresShow} />
-        <Formulario
-          {...{
-            error,
-            setError,
-            setColaboradoresShow,
-            colaboradores: BaseColaboradores,
-          }}
-        />
+      <section>
+        <Buscador {...{ BaseColaboradores, setColaboradoresShow }} />
+        <section className="container-fluid d-flex gap-3 mt-3 second-block">
+          <Listado header={header} colaboradores={colaboradoresShow} />
+          <Formulario
+            {...{
+              error,
+              setError,
+              setColaboradoresShow,
+              colaboradores: BaseColaboradores,
+            }}
+          />
+        </section>
       </section>
     </>
   );
