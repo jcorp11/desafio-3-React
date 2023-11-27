@@ -1,5 +1,7 @@
 import Table from "react-bootstrap/Table";
 
+import "./css/listado.css";
+
 const Listado = ({ header, colaboradores }) => {
   return (
     <div className="listado">
