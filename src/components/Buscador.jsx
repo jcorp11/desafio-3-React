@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./css/buscador.css";
 
 const Buscador = ({ BaseColaboradores, setColaboradoresShow }) => {
-  const [colabBuscado, setColabBuscado] = useState("");
-
   const filtarTabla = (colabBuscado) => {
     console.log(BaseColaboradores);
     const filtrado = BaseColaboradores.filter((colaborador) => {
