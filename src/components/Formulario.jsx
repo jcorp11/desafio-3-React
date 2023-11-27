@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import "../components/css/formulario.css";
 import { validarInput } from "../utils/validate.js";
 import { addColaborador } from "../utils/addColaborador.js";
 import Alerta from "./Alerta.jsx";
 
-const Formulario = ({ error, setError, colaboradores }) => {
+const Formulario = ({
+  error,
+  setError,
+  colaboradores,
+  setColaboradoresShow,
+}) => {
   const [formState, setFormState] = useState({
     nombre: "",
     correo: "",
@@ -24,12 +28,9 @@ const Formulario = ({ error, setError, colaboradores }) => {
   const submitForm = (e, formState, setError, colaboradores) => {
     e.preventDefault();
     const boolMistake = validarInput(e, formState, setError);
-    // console.log({ mistake: error.mistake });
-    // useEffect(() => {
-    //   if (!error.mistake) addColaborador(formState, colaboradores);
-    // }, [error]);
     if (!boolMistake) {
       addColaborador(formState, colaboradores);
+      setColaboradoresShow([...colaboradores]);
     }
   };
   //   useEffect(() => console.log({ error }), [error]);

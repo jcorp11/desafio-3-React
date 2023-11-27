@@ -30,7 +30,12 @@ function App() {
       <section className="container-fluid d-flex justify-content-start gap-3 mt-3 second-block">
         <Listado header={header} colaboradores={colaboradoresShow} />
         <Formulario
-          {...{ error, setError, colaboradores: BaseColaboradores }}
+          {...{
+            error,
+            setError,
+            setColaboradoresShow,
+            colaboradores: BaseColaboradores,
+          }}
         />
       </section>
     </>

@@ -4,7 +4,7 @@ import "./css/buscador.css";
 const Buscador = ({ BaseColaboradores, setColaboradoresShow }) => {
   const [colabBuscado, setColabBuscado] = useState("");
 
-  console.log({ BaseColaboradores });
+  // console.log({ BaseColaboradores });
   const filtarTabla = (colabBuscado) => {
     console.log(BaseColaboradores);
     const filtrado = BaseColaboradores.filter((colaborador) => {
@@ -24,10 +24,10 @@ const Buscador = ({ BaseColaboradores, setColaboradoresShow }) => {
       <h1>Lista de colaborador</h1>
       <input
         type="text"
-        className="form-control"
+        className="form-control mt-3"
         placeholder="Busca un colaborador"
         onChange={(e) => {
-          setColabBuscado(e.target.value);
+          // setColabBuscado(e.target.value);
           filtarTabla(e.target.value);
         }}
       />
