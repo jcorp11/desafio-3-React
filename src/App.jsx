@@ -2,8 +2,16 @@ import { useState } from "react";
 import Listado from "./components/Listado";
 import Formulario from "./components/Formulario";
 import "./App.css";
-import { BaseColaboradores } from "./data/data";
+import { BaseColaboradoresDefault } from "./data/data";
 import Buscador from "./components/Buscador";
+
+let BaseColaboradores;
+let BaseColaboradoresMemoria = JSON.parse(
+  localStorage.getItem("colaboradores")
+);
+BaseColaboradoresMemoria
+  ? (BaseColaboradores = BaseColaboradoresMemoria)
+  : (BaseColaboradores = BaseColaboradoresDefault);
 
 function App() {
   const header = ["Nombre", "Correo", "Edad", "Cargo", "Telefono"];

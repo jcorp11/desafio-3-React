@@ -23,9 +23,9 @@ const Alerta = ({ error }) => {
 
   return (
     <section
-      className={`alert mt-3 w-100  ${error.load ? "visible" : "hidden"} ${
-        error.mistake ? "alert-danger" : "alert-success"
-      }`}
+      className={`alert mt-3 w-100  text-center ${
+        error.load ? "visible" : "hidden"
+      } ${error.mistake ? "alert-danger" : "alert-success"}`}
     >
       {paraAlerta}
     </section>

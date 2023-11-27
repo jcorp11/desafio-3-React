@@ -31,6 +31,7 @@ const Formulario = ({
     if (!boolMistake) {
       addColaborador(formState, colaboradores);
       setColaboradoresShow([...colaboradores]);
+      localStorage.setItem("colaboradores", JSON.stringify(colaboradores));
     }
   };
   //   useEffect(() => console.log({ error }), [error]);
