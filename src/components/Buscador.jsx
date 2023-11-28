@@ -1,9 +1,8 @@
-import { useState } from "react";
 import "./css/buscador.css";
 
 const Buscador = ({ BaseColaboradores, setColaboradoresShow }) => {
   const filtarTabla = (colabBuscado) => {
-    console.log(BaseColaboradores);
+    // console.log(BaseColaboradores);
     const filtrado = BaseColaboradores.filter((colaborador) => {
       if (!colabBuscado) return true;
 
