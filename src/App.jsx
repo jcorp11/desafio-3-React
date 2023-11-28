@@ -12,7 +12,7 @@ const BaseColaboradores = BaseColaboradoresMemoria
   ? BaseColaboradoresMemoria
   : BaseColaboradoresDefault;
 
-const header = ["Nombre", "Correo", "Edad", "Cargo", "Telefono"];
+const header = ["Nombre", "Correo", "Edad", "Cargo", "Telefono", "Borrar"];
 function App() {
   const [error, setError] = useState({
     load: false,
@@ -25,7 +25,7 @@ function App() {
       boolTel: false,
     },
   });
-
+  // console.log(BaseColaboradores);
   const [colaboradoresShow, setColaboradoresShow] = useState([
     ...BaseColaboradores,
   ]);
@@ -35,7 +35,14 @@ function App() {
       <section>
         <Buscador {...{ BaseColaboradores, setColaboradoresShow }} />
         <section className="container-fluid d-flex gap-3 mt-3 second-block">
-          <Listado header={header} colaboradores={colaboradoresShow} />
+          {/* <Listado header={header} colaboradores={colaboradoresShow} setColaboradoresShow /> */}
+          <Listado
+            {...{
+              header,
+              setColaboradoresShow,
+              colaboradores: colaboradoresShow,
+            }}
+          />
           <Formulario
             {...{
               error,

@@ -2,7 +2,18 @@ import Table from "react-bootstrap/Table";
 
 import "./css/listado.css";
 
-const Listado = ({ header, colaboradores }) => {
+const Listado = ({ header, colaboradores, setColaboradoresShow }) => {
+  function handleDelete(id) {
+    const newColaboradores = colaboradores.filter(
+      (colaborador) => colaborador.id !== id
+    );
+    console.log(newColaboradores);
+    localStorage.setItem("colaboradores", JSON.stringify(newColaboradores));
+    setColaboradoresShow(newColaboradores);
+    // window.location.reload();
+  }
+  console.log(colaboradores);
+
   return (
     <div className="listado">
       <Table striped bordered hover>
@@ -21,6 +32,14 @@ const Listado = ({ header, colaboradores }) => {
               <td>{colaborador.edad}</td>
               <td>{colaborador.cargo}</td>
               <td>{colaborador.telefono}</td>
+              <td>
+                <button
+                  onClick={() => handleDelete(colaborador.id)}
+                  className="btn btn-danger bold"
+                >
+                  x
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
