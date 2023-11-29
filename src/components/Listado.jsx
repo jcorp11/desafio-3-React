@@ -35,9 +35,9 @@ const Listado = ({ header, colaboradores, setColaboradoresShow }) => {
               <td>
                 <button
                   onClick={() => handleDelete(colaborador.id)}
-                  className="btn btn-danger bold"
+                  className="btn btn-danger bold botonDelete"
                 >
-                  x
+                  X
                 </button>
               </td>
             </tr>
