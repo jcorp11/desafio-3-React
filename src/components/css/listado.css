@@ -10,4 +10,11 @@
   font-weight: 700;
   padding: 0px 10px;
   place-self: center;
+  background-color: rgb(89, 85, 85);
+  transition: box-shadow 0.3s ease-in-out background-color 0.3s ease-in-out;
+}
+
+.botonDelete:hover {
+  background-color: #e22323;
+  box-shadow: 0 0cap 16px rgba(47, 100, 141, 0.5);
 }
