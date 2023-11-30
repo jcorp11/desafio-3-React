@@ -1,14 +1,8 @@
 import { useState } from "react";
-import "../components/css/formulario.css";
 import { validarInput } from "../utils/validate.js";
 import { addColaborador } from "../utils/addColaborador.js";
 
-const Formulario = ({
-  error,
-  setError,
-  colaboradores,
-  setColaboradoresShow,
-}) => {
+const Formulario = ({ setError, colaboradores, setColaboradoresShow }) => {
   const [formState, setFormState] = useState({
     nombre: "",
     correo: "",

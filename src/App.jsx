@@ -36,7 +36,6 @@ function App() {
       <section>
         <Buscador {...{ BaseColaboradores, setColaboradoresShow }} />
         <section className="container-fluid d-flex gap-3 mt-3 second-block">
-          {/* <Listado header={header} colaboradores={colaboradoresShow} setColaboradoresShow /> */}
           <Listado
             {...{
               header,
