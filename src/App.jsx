@@ -3,6 +3,7 @@ import "./App.css";
 import Listado from "./components/Listado";
 import Formulario from "./components/Formulario";
 import Buscador from "./components/Buscador";
+import Alerta from "./components/Alerta";
 import { BaseColaboradoresDefault } from "./data/data";
 
 let BaseColaboradoresMemoria = JSON.parse(
@@ -43,14 +44,17 @@ function App() {
               colaboradores: colaboradoresShow,
             }}
           />
-          <Formulario
-            {...{
-              error,
-              setError,
-              setColaboradoresShow,
-              colaboradores: BaseColaboradores,
-            }}
-          />
+          <section className="formContainer">
+            <Formulario
+              {...{
+                error,
+                setError,
+                setColaboradoresShow,
+                colaboradores: BaseColaboradores,
+              }}
+            />
+            <Alerta error={error} />
+          </section>
         </section>
       </section>
     </>

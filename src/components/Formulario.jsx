@@ -2,7 +2,6 @@ import { useState } from "react";
 import "../components/css/formulario.css";
 import { validarInput } from "../utils/validate.js";
 import { addColaborador } from "../utils/addColaborador.js";
-import Alerta from "./Alerta.jsx";
 
 const Formulario = ({
   error,
@@ -37,7 +36,7 @@ const Formulario = ({
   //   useEffect(() => console.log({ error }), [error]);
 
   return (
-    <section className="formContainer">
+    <>
       <h2>Agrega un colaborador</h2>
       <form
         className="formulario"
@@ -106,8 +105,7 @@ const Formulario = ({
           Agregar Colaborador
         </button>
       </form>
-      <Alerta error={error} />
-    </section>
+    </>
   );
 };
 
